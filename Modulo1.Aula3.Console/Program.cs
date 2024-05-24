@@ -107,21 +107,35 @@ while (programaExecutando)
 
     void VisualizarPedidosPendentes()
     {
-        Console.WriteLine("Fila de Pedidos Pendentes: ");
-        foreach (int pedido in pedidosPendentes)
+        if (pedidosPendentes.Count == 0)
         {
-            Console.WriteLine(pedido);
+            Console.WriteLine("Nenhum pedido pendente!");
         }
+        else
+        {
+            Console.WriteLine("Fila de Pedidos Pendentes: ");
+            foreach (int pedido in pedidosPendentes)
+            {
+                Console.WriteLine(pedido);
+            }
+        }        
         Console.ReadKey();
     }
 
     void VisualizarPedidosConcluidos()
     {
-        Console.WriteLine("Pilha de Pedidos Concluidos: ");
-        foreach (int pedido in pedidosConcluidos)
+        if (pedidosConcluidos.Count == 0)
         {
-            Console.WriteLine(pedido);
+            Console.WriteLine("Nenhum pedido concluído!");
         }
+        else
+        {
+            Console.WriteLine("Pilha de Pedidos Concluidos: ");
+            foreach (int pedido in pedidosConcluidos)
+            {
+                Console.WriteLine(pedido);
+            }
+        }        
         Console.ReadKey();
     }    
 }
