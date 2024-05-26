@@ -61,27 +61,18 @@ while (programaExecutando)
     void AdicionarPedido()
     {
         int numeroPedido = 0;
-
-        try
+                
+        foreach (int ultimoPedido in pedidosPendentes)
         {
-            foreach (int ultimoPedido in pedidosPendentes)
-            {
-                numeroPedido = ultimoPedido;
-            }            
-        } 
-        catch (InvalidOperationException ex)
-        {
-            return;         
-        }
-        finally
-        {
-            numeroPedido++;
+            numeroPedido = ultimoPedido;
+        }            
+        
+        numeroPedido++;
 
-            pedidosPendentes.Enqueue(numeroPedido);
+        pedidosPendentes.Enqueue(numeroPedido);
 
-            Console.WriteLine("Pedido adicionado com sucesso!");
-            Console.ReadKey();
-        }
+        Console.WriteLine("Pedido adicionado com sucesso!");
+        Console.ReadKey();        
     }
 
     void PrepararPedido()
