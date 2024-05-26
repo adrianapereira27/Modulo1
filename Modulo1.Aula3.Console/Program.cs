@@ -85,6 +85,7 @@ while (programaExecutando)
         catch(InvalidOperationException ex)
         {
             Console.WriteLine("Não tem nenhum pedido para preparar!");
+            Console.ReadKey();
             return;
         }
 
